@@ -8,16 +8,17 @@
         Title="Operaciones matemáticas" Height="450" Width="800" Icon="cal.ico">
     <Grid>
         <GroupBox Header="Operaciones" HorizontalAlignment="Left" Height="204" Margin="46,101,0,0" VerticalAlignment="Top" Width="218"/>
-        <RadioButton x:Name="SumaRadioButton" Content="Suma" HorizontalAlignment="Left" Margin="102,144,0,0" VerticalAlignment="Top" Height="14" Width="107" IsChecked="True"/>
-        <RadioButton x:Name="RestaRadioButton" Content="Resta" HorizontalAlignment="Left" Margin="102,178,0,0" VerticalAlignment="Top" Height="14" Width="107"/>
-        <RadioButton x:Name="MultiplicacionRadioButton" Content="Multiplicación" HorizontalAlignment="Left" Margin="102,211,0,0" VerticalAlignment="Top" Height="14" Width="107"/>
-        <RadioButton x:Name="DivisionRadioButton" Content="División" HorizontalAlignment="Left" Margin="102,248,0,0" VerticalAlignment="Top" Height="14" Width="107"/>
+        <RadioButton x:Name="SumaRadioButton" Content="Suma" HorizontalAlignment="Left" Margin="102,144,0,0" VerticalAlignment="Top" Height="14" Width="107" Click="Click_RadioButton"/>
+        <RadioButton x:Name="RestaRadioButton" Content="Resta" HorizontalAlignment="Left" Margin="102,178,0,0" VerticalAlignment="Top" Height="14" Width="107" Click="Click_RadioButton" />
+        <RadioButton x:Name="MultiplicacionRadioButton" Content="Multiplicación" HorizontalAlignment="Left" Margin="102,211,0,0" VerticalAlignment="Top" Height="14" Width="107" Click="Click_RadioButton"/>
+        <RadioButton x:Name="DivisionRadioButton" Content="División" HorizontalAlignment="Left" Margin="102,248,0,0" VerticalAlignment="Top" Height="14" Width="107" Click="Click_RadioButton"/>
         <TextBlock HorizontalAlignment="Left" Margin="364,138,0,0" TextWrapping="Wrap" Text="Operando 1" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="364,246,0,0" TextWrapping="Wrap" Text="Operando 2" VerticalAlignment="Top"/>
-        <TextBox x:Name="Operando1TextBox" HorizontalAlignment="Left" Height="23" Margin="364,159,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextAlignment="Right" Text="0" TextChanged="RealizarOperacion"/>
         <TextBlock HorizontalAlignment="Left" Margin="625,197,0,0" TextWrapping="Wrap" Text="Resultado" VerticalAlignment="Top"/>
-        <TextBox x:Name="ResultadoTextBox" HorizontalAlignment="Left" Height="23" Margin="625,218,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120" TextAlignment="Right"/>
-        <TextBox x:Name="Operando2TextBox" HorizontalAlignment="Left" Height="23" Margin="364,267,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120" TextChanged="RealizarOperacion" TextAlignment="Right"/>
+        <TextBox x:Name="ResultadoTextBox" HorizontalAlignment="Left" Height="23" Margin="625,211,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextAlignment="Right" IsReadOnly="True"/>
+        <TextBox x:Name="Operando1TextBox" HorizontalAlignment="Left" Height="23" Margin="364,159,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextAlignment="Right" TextChanged="RealizarOperacion"/>
+        <TextBox x:Name="Operando2TextBox" HorizontalAlignment="Left" Height="23" Margin="364,267,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="RealizarOperacion" TextAlignment="Right"/>
+        <Button Content="Limpiar" HorizontalAlignment="Left" Margin="102,334,0,0" VerticalAlignment="Top" Width="107" Height="25" Click="Button_Click"/>
 
     </Grid>
 </Window>

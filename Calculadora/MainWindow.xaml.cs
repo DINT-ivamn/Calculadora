@@ -23,38 +23,59 @@ namespace Calculadora
         public MainWindow()
         {
             InitializeComponent();
+            Operando1TextBox.Text = "0";
+            Operando2TextBox.Text = "0";
+            ResultadoTextBox.Text = "0";
+            SumaRadioButton.IsChecked = true;
         }
 
-        private void RealizarOperacion(object sender, TextChangedEventArgs e)
+        private void RealizarOperacion()
         {
-            if(!int.TryParse(Operando1TextBox.Text, out int operando1))
+            if (!double.TryParse(Operando1TextBox.Text, out double operando1))
             {
-                Operando1TextBox.Text = "0";
+                Operando1TextBox.Text = "";
                 operando1 = 0;
             }
-            if (!int.TryParse(Operando2TextBox.Text, out int operando2))
+            if (!double.TryParse(Operando2TextBox.Text, out double operando2))
             {
-                Operando2TextBox.Text = "0";
+                Operando2TextBox.Text = "";
                 operando2 = 0;
             }
             string textoFinal = "0";
             if (SumaRadioButton.IsChecked == true)
             {
-                textoFinal = $"{operando1 + operando2}";
+                textoFinal = $"{Math.Round(operando1 + operando2, 3)}";
             }
             else if (RestaRadioButton.IsChecked == true)
             {
-                textoFinal = $"{operando1 - operando2}";
+                textoFinal = $"{Math.Round(operando1 - operando2, 3)}";
             }
             else if (MultiplicacionRadioButton.IsChecked == true)
             {
-                textoFinal = $"{operando1 * operando2}";
+                textoFinal = $"{Math.Round(operando1 * operando2, 3)}";
             }
-            else
+            else if(DivisionRadioButton.IsChecked == true)
             {
-                textoFinal = operando2 != 0 ? $"{operando1 / operando2}" : "Error";
+                textoFinal = operando2 != 0 ? $"{Math.Round(operando1 / operando2), 3}" : "Error";
             }
             ResultadoTextBox.Text = textoFinal;
+        }
+
+        private void RealizarOperacion(object sender, TextChangedEventArgs e)
+        {
+            RealizarOperacion();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            SumaRadioButton.IsChecked = true;
+            Operando1TextBox.Text = "0";
+            Operando2TextBox.Text = "0";
+        }
+
+        private void Click_RadioButton(object sender, RoutedEventArgs e)
+        {
+            RealizarOperacion();
         }
     }
 }
