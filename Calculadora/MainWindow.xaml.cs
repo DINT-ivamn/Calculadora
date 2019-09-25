@@ -56,12 +56,12 @@ namespace Calculadora
             }
             else if(DivisionRadioButton.IsChecked == true)
             {
-                textoFinal = operando2 != 0 ? $"{Math.Round(operando1 / operando2), 3}" : "Error";
+                textoFinal = operando2 != 0 ? $"{Math.Round(operando1 / operando2, 3)}" : "Error";
             }
             ResultadoTextBox.Text = textoFinal;
         }
 
-        private void RealizarOperacion(object sender, TextChangedEventArgs e)
+        private void TextoCambiado(object sender, TextChangedEventArgs e)
         {
             RealizarOperacion();
         }
@@ -76,6 +76,22 @@ namespace Calculadora
         private void Click_RadioButton(object sender, RoutedEventArgs e)
         {
             RealizarOperacion();
+        }
+
+        private void VaciarTextBox1(object sender, RoutedEventArgs e)
+        {
+            if (Operando1TextBox.Text == "0")
+            {
+                Operando1TextBox.Text = "";
+            }
+        }
+
+        private void VaciarTextBox2(object sender, RoutedEventArgs e)
+        {
+            if (Operando2TextBox.Text == "0")
+            {
+                Operando2TextBox.Text = "";
+            }
         }
     }
 }

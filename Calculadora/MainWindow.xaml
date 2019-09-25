@@ -16,8 +16,8 @@
         <TextBlock HorizontalAlignment="Left" Margin="364,246,0,0" TextWrapping="Wrap" Text="Operando 2" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="625,197,0,0" TextWrapping="Wrap" Text="Resultado" VerticalAlignment="Top"/>
         <TextBox x:Name="ResultadoTextBox" HorizontalAlignment="Left" Height="23" Margin="625,211,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextAlignment="Right" IsReadOnly="True"/>
-        <TextBox x:Name="Operando1TextBox" HorizontalAlignment="Left" Height="23" Margin="364,159,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextAlignment="Right" TextChanged="RealizarOperacion"/>
-        <TextBox x:Name="Operando2TextBox" HorizontalAlignment="Left" Height="23" Margin="364,267,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="RealizarOperacion" TextAlignment="Right"/>
+        <TextBox x:Name="Operando1TextBox" HorizontalAlignment="Left" Height="23" Margin="364,159,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextAlignment="Right" TextChanged="TextoCambiado" GotFocus="VaciarTextBox1"/>
+        <TextBox x:Name="Operando2TextBox" HorizontalAlignment="Left" Height="23" Margin="364,267,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TextoCambiado" TextAlignment="Right" GotFocus="VaciarTextBox2"/>
         <Button Content="Limpiar" HorizontalAlignment="Left" Margin="102,334,0,0" VerticalAlignment="Top" Width="107" Height="25" Click="Button_Click"/>
 
     </Grid>
